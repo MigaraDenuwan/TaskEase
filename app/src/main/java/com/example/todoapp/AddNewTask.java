@@ -31,9 +31,10 @@ public class AddNewTask extends BottomSheetDialogFragment {
 
     private DatabaseHandler db;
 
-    public static AddNewTask newInstance() {
+    public static AddNewTask newInstance(){
         return new AddNewTask();
     }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +51,11 @@ public class AddNewTask extends BottomSheetDialogFragment {
 
         return view;
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        newTaskText = getView().findViewById(R.id.newTaskText);
+        newTaskText = requireView().findViewById(R.id.newTaskText);
         newTaskSaveButton = getView().findViewById(R.id.newTaskButton);
 
         boolean isUpdate = false;
@@ -65,7 +67,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
             newTaskText.setText(task);
             assert task != null;
             if(task.length()>0)
-                newTaskSaveButton.setTextColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
+                newTaskSaveButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark));
         }
 
         db = new DatabaseHandler(getActivity());
@@ -84,7 +86,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
                 }
                 else{
                     newTaskSaveButton.setEnabled(true);
-                    newTaskSaveButton.setTextColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
+                    newTaskSaveButton.setTextColor(ContextCompat.getColor(requireContext(), R.color.colorPrimaryDark));
                 }
             }
 
@@ -92,6 +94,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
             public void afterTextChanged(Editable s) {
             }
         });
+
         final boolean finalIsUpdate = isUpdate;
         newTaskSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
