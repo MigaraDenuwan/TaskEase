@@ -1,11 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-<<<<<<< HEAD
     id("kotlin-android")
     kotlin("kapt")
-=======
->>>>>>> d2c8ba4714721cca58f5b626cb7a08df17986eb8
 }
 
 android {
@@ -39,12 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-<<<<<<< HEAD
     buildFeatures {
         viewBinding = true
     }
-=======
->>>>>>> d2c8ba4714721cca58f5b626cb7a08df17986eb8
 }
 
 dependencies {

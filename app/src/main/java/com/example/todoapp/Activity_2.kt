@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> d2c8ba4714721cca58f5b626cb7a08df17986eb8
 package com.example.todoapp
 
 import android.content.Intent
@@ -21,8 +17,4 @@ class Activity_2 : AppCompatActivity() {
             finish()
         }, 2000)
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d2c8ba4714721cca58f5b626cb7a08df17986eb8

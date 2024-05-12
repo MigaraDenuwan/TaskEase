@@ -16,7 +16,6 @@ import com.example.todoapp.Utils.DatabaseHandler
 class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainActivity) :
     RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {
 
-    // Use MutableList to allow modifying the list
     private var todoList: MutableList<ToDoDAO> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -77,8 +76,4 @@ class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainAct
     class ViewHolder internal constructor(view: View) : RecyclerView.ViewHolder(view) {
         var task: CheckBox = view.findViewById(R.id.todoCheckBox)
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> d2c8ba4714721cca58f5b626cb7a08df17986eb8
