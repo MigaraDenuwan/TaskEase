@@ -16,9 +16,7 @@ class DatabaseHandler(context: Context?) : SQLiteOpenHelper(context, NAME, null,
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TODO_TABLE)
-        // Create tables again
         onCreate(db)
     }
 
