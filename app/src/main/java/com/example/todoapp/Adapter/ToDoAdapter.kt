@@ -77,4 +77,8 @@ class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainAct
     class ViewHolder internal constructor(view: View) : RecyclerView.ViewHolder(view) {
         var task: CheckBox = view.findViewById(R.id.todoCheckBox)
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d2c8ba4714721cca58f5b626cb7a08df17986eb8
