@@ -9,7 +9,7 @@ import android.widget.CheckBox
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapp.AddNewTask
 import com.example.todoapp.MainActivity
-import com.example.todoapp.Model.ToDoModel
+import com.example.todoapp.DAO.ToDoDAO
 import com.example.todoapp.R
 import com.example.todoapp.Utils.DatabaseHandler
 
@@ -17,7 +17,7 @@ class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainAct
     RecyclerView.Adapter<ToDoAdapter.ViewHolder>() {
 
     // Use MutableList to allow modifying the list
-    private var todoList: MutableList<ToDoModel> = mutableListOf()
+    private var todoList: MutableList<ToDoDAO> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView = LayoutInflater.from(parent.context)
@@ -47,7 +47,7 @@ class ToDoAdapter(private val db: DatabaseHandler, private val activity: MainAct
     val context: Context
         get() = activity
 
-    fun setTasks(newTodoList: List<ToDoModel>) {
+    fun setTasks(newTodoList: List<ToDoDAO>) {
         todoList.clear()
         todoList.addAll(newTodoList)
         notifyDataSetChanged()

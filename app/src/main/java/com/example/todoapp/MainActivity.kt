@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapp.AddNewTask.Companion.newInstance
-import com.example.todoapp.Model.ToDoModel
+import com.example.todoapp.DAO.ToDoDAO
 import com.example.todoapp.Utils.DatabaseHandler
 import com.example.todoapp.adapter.ToDoAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
     private var tasksAdapter: ToDoAdapter? = null
     private var fab: FloatingActionButton? = null
 
-    private var taskList: List<ToDoModel?>? = null
+    private var taskList: List<ToDoDAO?>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
         taskList = db!!.allTasks
         Collections.reverse(taskList)
 
-        (taskList as MutableList<ToDoModel>?)?.let { tasksAdapter!!.setTasks(it) }
+        (taskList as MutableList<ToDoDAO>?)?.let { tasksAdapter!!.setTasks(it) }
 
         fab?.setOnClickListener(View.OnClickListener {
             newInstance().show(
@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
     override fun handleDialogClose(dialog: DialogInterface?) {
         taskList = db!!.allTasks
         Collections.reverse(taskList)
-        (taskList as MutableList<ToDoModel>?)?.let { tasksAdapter!!.setTasks(it) }
+        (taskList as MutableList<ToDoDAO>?)?.let { tasksAdapter!!.setTasks(it) }
         tasksAdapter!!.notifyDataSetChanged()
     }
 }

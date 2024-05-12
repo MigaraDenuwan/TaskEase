@@ -13,7 +13,7 @@ import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.content.ContextCompat
-import com.example.todoapp.Model.ToDoModel
+import com.example.todoapp.DAO.ToDoDAO
 import com.example.todoapp.Utils.DatabaseHandler
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -98,7 +98,7 @@ class AddNewTask : BottomSheetDialogFragment() {
                 }
             } else {
                 text?.let { taskText ->
-                    val task = ToDoModel()
+                    val task = ToDoDAO()
                     task.task = taskText
                     task.status = 0
                     db?.insertTask(task)
